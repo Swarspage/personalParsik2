@@ -1,0 +1,30 @@
+[
+  {
+    "customerName": "Aditya shankar jambhale",
+    "phoneNumber": "08108765751",
+    "tableNumber": 2,
+    "branch": "airoli",
+    "items": [
+      {
+        "dishId": 2,
+        "dishName": "Avocado Toast",
+        "quantity": 1,
+        "price": 350
+      },
+      {
+        "dishId": 1,
+        "dishName": "Classic Cappuccino",
+        "quantity": 1,
+        "price": 180
+      }
+    ],
+    "subtotal": "530",
+    "tax": "26.5",
+    "totalAmount": "556.5",
+    "paymentMethod": "card",
+    "id": 1,
+    "createdAt": "2026-02-26T19:03:09.990Z",
+    "status": "preparing",
+    "paymentStatus": "pending"
+  }
+]

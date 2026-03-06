@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "username": "admin@parsikcafe.com",
+    "password": "Parsik@2024",
+    "role": "admin"
+  },
+  {
+    "username": "Aditya",
+    "password": "1234567",
+    "fullName": "Aditya shankar jambhale",
+    "email": "jambhaleaditya91@gmail.com",
+    "phoneNumber": "08108765751",
+    "role": "user",
+    "id": 2
+  }
+]

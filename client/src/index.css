@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 20 20% 98%;
+    /* Soft Paper */
+    --foreground: 160 10% 8%;
+    /* Almost Black Ink */
+
+    --card: 0 0% 100%;
+    --card-foreground: 160 10% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 160 10% 8%;
+
+    --primary: 155 35% 15%;
+    /* Deep Forest Green */
+    --primary-foreground: 20 20% 98%;
+
+    --secondary: 155 15% 94%;
+    /* Muted Sage */
+    --secondary-foreground: 155 35% 15%;
+
+    --muted: 155 10% 92%;
+    --muted-foreground: 155 10% 40%;
+
+    --accent: 38 75% 55%;
+    /* Warm Artisan Gold */
+    --accent-foreground: 20 20% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 155 10% 88%;
+    --input: 155 10% 88%;
+    --ring: 155 35% 15%;
+
+    --radius: 1.5rem;
+
+    --font-sans: 'Outfit', sans-serif;
+    --font-display: 'Fraunces', serif;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-accent/20 selection:text-primary;
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02";
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    @apply font-normal tracking-tight text-primary;
+  }
+
+  .heading-hero {
+    @apply text-5xl md:text-7xl lg:text-8xl leading-[1.05] tracking-[-0.04em] font-light;
+  }
+
+  .heading-section {
+    @apply text-3xl md:text-5xl lg:text-6xl leading-[1.1] tracking-tight font-normal;
+  }
+}
+
+@layer components {
+
+  /* Fluid Typography Utils - Professional Scaling */
+  .heading-hero {
+    @apply text-3xl sm:text-5xl md:text-6xl font-normal leading-[1] tracking-tight;
+  }
+
+  .heading-section {
+    @apply text-2xl sm:text-3xl md:text-3xl font-normal tracking-tight;
+  }
+
+  .text-premium {
+    @apply text-sm sm:text-base leading-relaxed;
+  }
+
+  /* Font Utilities */
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-sans {
+    font-family: var(--font-sans);
+  }
+
+  .serif {
+    font-family: var(--font-display);
+    font-style: italic;
+  }
+
+  /* Glassmorphism */
+  .glass {
+    @apply bg-white/70 backdrop-blur-xl border border-white/40 shadow-xl;
+  }
+
+  /* Mobile Optimized Cards */
+  .premium-card {
+    @apply bg-white border border-border/50 shadow-[0_4px_20px_rgb(0, 0, 0, 0.03)] rounded-[1rem] transition-all duration-300;
+  }
+
+  /* Thumb-friendly interactions */
+  .mobile-touch-target {
+    @apply min-h-[44px] min-w-[44px];
+  }
+}
+
+/* Precise Mobile Overrides */
+@media (max-width: 640px) {
+  :root {
+    --radius: 0.75rem;
+  }
+
+  .container {
+    @apply px-4;
+  }
+
+  .heading-hero {
+    @apply text-2xl sm:text-3xl font-black;
+  }
+}
+
+/* Custom Animations */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.reveal-grid>* {
+  opacity: 0;
+  animation: slideUp 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease forwards;
+}
+
+.scale-up {
+  animation: scaleUp 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+/* Hide scrollbar but keep functionality */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Smooth transitions for interactive elements */
+a,
+button {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
